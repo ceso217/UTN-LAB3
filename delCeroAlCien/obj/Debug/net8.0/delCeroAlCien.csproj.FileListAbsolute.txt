@@ -1,0 +1,14 @@
+C:\Users\baron\source\repos\EjerciciosLab\delCeroAlCien\obj\Debug\net8.0\delCeroAlCien.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\baron\source\repos\EjerciciosLab\delCeroAlCien\obj\Debug\net8.0\delCeroAlCien.AssemblyInfoInputs.cache
+C:\Users\baron\source\repos\EjerciciosLab\delCeroAlCien\obj\Debug\net8.0\delCeroAlCien.AssemblyInfo.cs
+C:\Users\baron\source\repos\EjerciciosLab\delCeroAlCien\obj\Debug\net8.0\delCeroAlCien.csproj.CoreCompileInputs.cache
+C:\Users\baron\source\repos\EjerciciosLab\delCeroAlCien\bin\Debug\net8.0\delCeroAlCien.exe
+C:\Users\baron\source\repos\EjerciciosLab\delCeroAlCien\bin\Debug\net8.0\delCeroAlCien.deps.json
+C:\Users\baron\source\repos\EjerciciosLab\delCeroAlCien\bin\Debug\net8.0\delCeroAlCien.runtimeconfig.json
+C:\Users\baron\source\repos\EjerciciosLab\delCeroAlCien\bin\Debug\net8.0\delCeroAlCien.dll
+C:\Users\baron\source\repos\EjerciciosLab\delCeroAlCien\bin\Debug\net8.0\delCeroAlCien.pdb
+C:\Users\baron\source\repos\EjerciciosLab\delCeroAlCien\obj\Debug\net8.0\delCeroAlCien.dll
+C:\Users\baron\source\repos\EjerciciosLab\delCeroAlCien\obj\Debug\net8.0\refint\delCeroAlCien.dll
+C:\Users\baron\source\repos\EjerciciosLab\delCeroAlCien\obj\Debug\net8.0\delCeroAlCien.pdb
+C:\Users\baron\source\repos\EjerciciosLab\delCeroAlCien\obj\Debug\net8.0\delCeroAlCien.genruntimeconfig.cache
+C:\Users\baron\source\repos\EjerciciosLab\delCeroAlCien\obj\Debug\net8.0\ref\delCeroAlCien.dll
