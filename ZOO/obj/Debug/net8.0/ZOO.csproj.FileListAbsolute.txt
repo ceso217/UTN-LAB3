@@ -1,0 +1,15 @@
+C:\Users\baron\source\repos\UTN-LAB3\ZOO\bin\Debug\net8.0\ZOO.exe
+C:\Users\baron\source\repos\UTN-LAB3\ZOO\bin\Debug\net8.0\ZOO.deps.json
+C:\Users\baron\source\repos\UTN-LAB3\ZOO\bin\Debug\net8.0\ZOO.runtimeconfig.json
+C:\Users\baron\source\repos\UTN-LAB3\ZOO\bin\Debug\net8.0\ZOO.dll
+C:\Users\baron\source\repos\UTN-LAB3\ZOO\bin\Debug\net8.0\ZOO.pdb
+C:\Users\baron\source\repos\UTN-LAB3\ZOO\obj\Debug\net8.0\ZOO.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\baron\source\repos\UTN-LAB3\ZOO\obj\Debug\net8.0\ZOO.AssemblyInfoInputs.cache
+C:\Users\baron\source\repos\UTN-LAB3\ZOO\obj\Debug\net8.0\ZOO.AssemblyInfo.cs
+C:\Users\baron\source\repos\UTN-LAB3\ZOO\obj\Debug\net8.0\ZOO.csproj.CoreCompileInputs.cache
+C:\Users\baron\source\repos\UTN-LAB3\ZOO\obj\Debug\net8.0\ZOO.sourcelink.json
+C:\Users\baron\source\repos\UTN-LAB3\ZOO\obj\Debug\net8.0\ZOO.dll
+C:\Users\baron\source\repos\UTN-LAB3\ZOO\obj\Debug\net8.0\refint\ZOO.dll
+C:\Users\baron\source\repos\UTN-LAB3\ZOO\obj\Debug\net8.0\ZOO.pdb
+C:\Users\baron\source\repos\UTN-LAB3\ZOO\obj\Debug\net8.0\ZOO.genruntimeconfig.cache
+C:\Users\baron\source\repos\UTN-LAB3\ZOO\obj\Debug\net8.0\ref\ZOO.dll
