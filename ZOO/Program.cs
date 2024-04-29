@@ -8,27 +8,28 @@ namespace ZOO
         static void Main(string[] args)
         {
             int opcion = 0;
-            string nombre;
+            string nombreA;
+            string nombreC;
             string especie;
             string comida;
+            string tipo;
+            string tipoCarnivoro;
             Zoologico zoo = new Zoologico();
-            Cuidador cuidador;
-            Animal animal;
 
             do
             {
-                Console.WriteLine("Seleccione que quiere hacer: \n 1. Agregar animal \n 2. Agregar cuidador \n 3. Eliminar animal \n 4. Eliminar cuidador \n 5. Asignar animal a un cuidador \n 6. Mostrar cuidadores y animales \n 7.        Salir");
+                Console.WriteLine("Seleccione que quiere hacer: \n 1. Agregar animal \n 2. Agregar planta carnívora \n 3. Agregar cuidador \n 4. Eliminar animal o planta carnívora \n 5. Eliminar cuidador \n 6. Asignar animal a un cuidador \n 7. Mostrar cuidadores, animales y plantas carnívoras \n 8. Alimentar animales y plantas carnívoras\n 9. Salir");
                 opcion = int.Parse(Console.ReadLine());
                 switch (opcion)
                 {
                     case 1:
-                        zoo.agregarAnimal(new Mamifero("Juan", "Leon", "Carne"));
+                        /*zoo.agregarAnimal(new Mamifero("Juan", "Leon", "Carne"));
                         zoo.agregarAnimal(new Mamifero("Snape", "Serpiente", "Conejos"));
                         zoo.agregarAnimal(new Ave("Pedro", "Aguila", "Niños"));
                         zoo.agregarAnimal(new Pez("Jorge", "Dorado", "Gusanos"));
-                        zoo.agregarAnimal(new Pez("Nemo", "Pez Payaso", "Lombrizes"));
-                        /*Console.Write("Ingrese el nombre del animal: ");
-                        nombre = Console.ReadLine();
+                        zoo.agregarAnimal(new Pez("Nemo", "Pez Payaso", "Lombrizes"));*/
+                        Console.Write("Ingrese el nombre del animal: ");
+                        nombreA = Console.ReadLine();
                         Console.WriteLine("Seleccione el grupo del animal: \n 1. Mamifero \n 2. Ave \n 3. Pez");
                         opcion = int.Parse(Console.ReadLine());
                         Console.Write("Ingrese la especie: ");
@@ -38,54 +39,67 @@ namespace ZOO
                         switch (opcion)
                         {
                             case 1:
-                                zoo.agregarAnimal(new Mamifero(nombre, especie, comida));
+                                zoo.agregarAnimal(new Mamifero(nombreA, especie, comida));
                                 break;
                             case 2:
-                                zoo.agregarAnimal(new Ave(nombre, especie, comida));
+                                zoo.agregarAnimal(new Ave(nombreA, especie, comida));
                                 break;
                             case 3:
-                                zoo.agregarAnimal(new Pez(nombre, especie, comida));
+                                zoo.agregarAnimal(new Pez(nombreA, especie, comida));
                                 break;
                             default:
                                 Console.WriteLine("Elección inválida.");
                                 break;
-                        }*/
+                        }
                         break;
                     case 2:
-                        //Console.Write("Ingrese el nombre del cuidador: ");
-                        zoo.agregarCuidador(new Cuidador("Lucas"));
-                        zoo.agregarCuidador(new Cuidador("Cristian"));
-                        zoo.agregarCuidador(new Cuidador("Carmelo"));
-                        
+                        Console.Write("Ingrese el nombre de la planta carnívora: ");
+                        nombreA = Console.ReadLine();
+                        Console.Write("Ingrese el tipo: ");
+                        tipo = Console.ReadLine();
+                        Console.Write("Ingrese el tipo de trampa: ");
+                        tipoCarnivoro = Console.ReadLine();
+                        zoo.agregarPlanta(new PlantaCarnivora(nombreA, tipo, tipoCarnivoro));
+                        /*zoo.agregarPlanta(new PlantaCarnivora("Nepenthes", "Trepadora", "Trampa líquida"));
+                        zoo.agregarPlanta(new PlantaCarnivora("Drosera", "Herbácea", "Trampa pegajosa"));*/
                         break;
                     case 3:
-                        Console.Write("Ingrese el nombre del animal que quiere eliminar: ");
-                        zoo.eliminarAnimal(Console.ReadLine());
+                        Console.Write("Ingrese el nombre del cuidador: ");
+                        nombreC = Console.ReadLine();
+                        zoo.agregarCuidador(new Cuidador(nombreC));
+                        /*zoo.agregarCuidador(new Cuidador("Lucas"));
+                        zoo.agregarCuidador(new Cuidador("Cristian"));
+                        zoo.agregarCuidador(new Cuidador("Carmelo"));
+                        zoo.agregarCuidador(new Cuidador("Daiana"));*/
                         break;
                     case 4:
+                        Console.Write("Ingrese el nombre del animal o planta carnívora que quiere eliminar: ");
+                        zoo.eliminarAnimal(Console.ReadLine());
+                        break;
+                    case 5:
                         Console.Write("Ingrese el nombre del cuidador: ");
                         zoo.eliminarCuidador(Console.ReadLine());
                         break;
-                    case 5:
-                        zoo.asignarCuidadorAnimal(new Cuidador("Lucas"), new Animal("Juan"));
-                        zoo.asignarCuidadorAnimal(new Cuidador("Lucas"), new Animal("Pedro"));
-                        zoo.asignarCuidadorAnimal(new Cuidador("Lucas"), new Animal("Jorge"));
-                        zoo.asignarCuidadorAnimal(new Cuidador("Cristian"), new Animal("Snape"));
-                        /*Console.Write("Ingrese el nombre del cuidador al que quiere asignar un animal: ");
-                        nombre = Console.ReadLine();
-                        cuidador = new Cuidador(nombre);
-                        Console.Write("Ingrese el nombre del animal: ");
-                        nombre = Console.ReadLine();
-                        animal = new Animal(nombre, "x", "x");
-                        zoo.asignarCuidadorAnimal(cuidador, animal);*/
-                        break;
                     case 6:
-                        zoo.mostrarCuidadoresYAnimales();
+                        Console.Write("Ingrese el nombre del cuidador al que quiere asignar un animal: ");
+                        nombreC = Console.ReadLine();
+                        Console.Write("Ingrese el nombre del animal: ");
+                        nombreA = Console.ReadLine();
+                        zoo.asignarCuidadorAnimal(nombreC, nombreA);
+                        /*zoo.asignarCuidadorAnimal("Lucas", "Juan");
+                        zoo.asignarCuidadorAnimal("Lucas", "Pedro");
+                        zoo.asignarCuidadorAnimal("Lucas", "Jorge");
+                        zoo.asignarCuidadorAnimal("Cristian", "Snape");
+                        zoo.asignarCuidadorAnimal("Daiana", "Nepenthes");*/
                         break;
                     case 7:
+                        zoo.mostrarCuidadoresYAnimales();
                         break;
                     case 8:
-                        
+                        zoo.alimentarAnimales();
+                        break;
+                    case 9:
+                        Console.WriteLine("Gracias por usar nuestro programa!");
                         break;
                 }
             } while (opcion != 9);
@@ -103,28 +117,60 @@ namespace ZOO
             this.listaCuidadores = new List<Cuidador>();
         }
 
-        public void agregarAnimal(Animal animal)
+        public void agregarAnimal(SerVivo animal)
         {
             listaAnimales.Add(animal);
         }
 
+        public void agregarPlanta(PlantaCarnivora plantaCarnivora)
+        {
+            listaAnimales.Add(plantaCarnivora);
+        }
+
+        // después de hacer este método creo que soy dios
         public void eliminarAnimal(string nombre)
         {
-            int indice = -1;
-            foreach (Animal animal in listaAnimales)
+            int indiceAnimales = -1;
+            int indiceCuidador = -1;
+            int indiceAnimalACargo = -1;
+
+            foreach (SerVivo animal in listaAnimales)
             {
                 if (animal.Nombre == nombre)
                 {
-                    indice = listaAnimales.IndexOf(animal);
+                    // si existe el animal guarda el indice de la posición en la que se encuentra
+                    indiceAnimales = listaAnimales.IndexOf(animal);
+                    if (animal.Asignado)
+                    {
+                        foreach(Cuidador cuidador in listaCuidadores)
+                        {
+                            foreach(SerVivo serVivo in cuidador.AnimalesACargo)
+                            {
+                                if (serVivo.Nombre == nombre)
+                                {
+                                    // si el animal fue asignado a un cuidador guarda el indice del cuidador y el indice del animal en la lista de animales a cargo del cuidador
+                                    indiceCuidador = listaCuidadores.IndexOf(cuidador);
+                                    indiceAnimalACargo = cuidador.AnimalesACargo.IndexOf(animal);
+                                }
+                            }
+                        }
+                    }
                 }
             }
-            if (indice == -1)
+            // si no existe el animal tira un mensaje de error, y si existe lo elimina de la lista de animales del zoo
+            if (indiceAnimales == -1)
             {
                 Console.WriteLine("No existe ningún animal con ese nombre");
             }
             else
             {
-                listaAnimales.Remove(listaAnimales[indice]);
+                // si el indice es distindo al por defecto, en este caso -1, significa que el animal había sido asignado a un cuidador
+                // por ende procede a eliminar al animal de la lista de animales a cargo del cuidador haciendo uso de los indices tomados anteriormente
+                if(indiceCuidador != -1)
+                {
+                    listaCuidadores[indiceCuidador].AnimalesACargo.Remove(listaCuidadores[indiceCuidador].AnimalesACargo[indiceAnimalACargo]);
+                }
+                listaAnimales.Remove(listaAnimales[indiceAnimales]);
                 Console.WriteLine("Se eliminó el animal exitosamente!");
             }
         }
@@ -136,34 +182,38 @@ namespace ZOO
 
         public void eliminarCuidador(string nombre)
         {
-            int existe = 0;
+            int indice = -1;
             foreach (Cuidador cuidador in listaCuidadores)
             {
                 if (cuidador.Nombre == nombre)
                 {
-                    listaCuidadores.Remove(cuidador);
-                    existe++;
+                    indice = listaCuidadores.IndexOf(cuidador);
                 }
             }
-            if (existe != 1)
+            if (indice == -1)
             {
                 Console.WriteLine("No existe ningún cuidador con ese nombre");
             }
+            else
+            {
+                listaCuidadores.Remove(listaCuidadores[indice]);
+                Console.WriteLine("Se eliminó al cuidador exitosamente!");
+            }
         }
 
-        public void asignarCuidadorAnimal(Cuidador nombreCuidador, Animal nombreAnimal)
+        public void asignarCuidadorAnimal(string nombreCuidador, string nombreAnimal)
         {
             int existeC = 0;
             int existeA = 0;
 
             foreach (Cuidador cuidador in listaCuidadores)
             {
-                if (cuidador.Nombre == nombreCuidador.Nombre)
+                if (cuidador.Nombre == nombreCuidador)
                 {
                     existeC++;
-                    foreach (Animal animal in listaAnimales)
+                    foreach (SerVivo animal in listaAnimales)
                     {
-                        if (animal.Nombre == nombreAnimal.Nombre)
+                        if (animal.Nombre == nombreAnimal)
                         {
                             cuidador.AnimalesACargo.Add(animal);
                             animal.Asignado = true;
@@ -182,125 +232,170 @@ namespace ZOO
             }
         }
 
-        public void mostrarAnimales()
-        {
-            if (listaAnimales.Count == 0)
-            {
-                Console.WriteLine("La lista de animales está vacía");
-            }
-            else
-            {
-                Console.WriteLine("{0,-15} {1,-15} {2,-15}", "Nombre", "Especie", "Comida");
-                foreach (Animal animal in listaAnimales)
-                {
-                    Console.WriteLine("{0,-15} {1,-15} {2,-15}", animal.Nombre, animal.Especie, animal.Comida);
-                }
-            }
-        }
-        public void mostrarCuidadores()
-        {
-            if (listaCuidadores.Count == 0)
-            {
-                Console.WriteLine("La lista de cuidadores está vacía");
-            }
-            else
-            {
-                Console.WriteLine("{0,-15} ", "Nombre");
-                foreach (Cuidador cuidador in listaCuidadores)
-                {
-                    Console.WriteLine("{0,-15}", cuidador.Nombre);
-                }
-            }
-        }
-
         public void mostrarCuidadoresYAnimales()
         {
             // cuidadores con animales asignados
             int animalesAsignados = 0;
             int cuidadoresAsignados = 0;
-            foreach (Animal animal in listaAnimales)
+            if (listaAnimales.Count == 0 && listaCuidadores.Count == 0)
             {
-                if (animal.Asignado == true)
-                {
-                    animalesAsignados++;
-                }
+                Console.WriteLine("No hay cuidadores, animales ni plantas carnívoras en el zoo");
             }
-            Console.WriteLine(listaAnimales.Count);
-            if (animalesAsignados != 0)
+            else
             {
-                Console.WriteLine("Los cuidadores con sus animales asignados son los siguientes: ");
-                Console.WriteLine("{0,-15} {1,-15}", "Cuidador", "Animales a cargo");
+                foreach (SerVivo animal in listaAnimales)
+                {
+                    if (animal.Asignado == true)
+                    {
+                        animalesAsignados++;
+                    }
+                }
+                if (animalesAsignados != 0)
+                {
+                    Console.WriteLine("Los cuidadores con sus animales asignados son los siguientes: \n");
+                    Console.WriteLine("{0,-15} {1,-15}", "Cuidador", "Animales a cargo");
 
+                    foreach (Cuidador cuidador in listaCuidadores)
+                    {
+                        if (cuidador.AnimalesACargo.Count != 0)
+                        {
+                            Console.Write("{0,-15}", cuidador.Nombre);
+                            foreach (SerVivo animal in cuidador.AnimalesACargo)
+                            {
+                                if (animal != cuidador.AnimalesACargo[cuidador.AnimalesACargo.Count - 1])
+                                {
+                                    Console.Write($" {animal.Nombre} ({animal.Especie}) //");
+                                }
+                                else
+                                {
+                                    Console.Write($" {animal.Nombre} ({animal.Especie})");
+                                }
+                            }
+                            Console.WriteLine("");
+                        }
+                    }
+                }
+                // cuidadores sin animales asignados
                 foreach (Cuidador cuidador in listaCuidadores)
                 {
                     if (cuidador.AnimalesACargo.Count != 0)
                     {
-                        Console.Write("{0,-15}", cuidador.Nombre);
-                        foreach (Animal animal in cuidador.AnimalesACargo)
+                        cuidadoresAsignados++;
+                    }
+                }
+                if (cuidadoresAsignados != listaCuidadores.Count)
+                {
+                    Console.WriteLine("Los cuidadores sin animales asignados son:");
+                    foreach (Cuidador cuidador in listaCuidadores)
+                    {
+                        if (cuidador.AnimalesACargo.Count == 0)
                         {
-                            if (animal != cuidador.AnimalesACargo[cuidador.AnimalesACargo.Count - 1])
+                            Console.WriteLine("{0,-15}", cuidador.Nombre);
+                        }
+                    }
+                }
+                // animales sin asignar
+                if (animalesAsignados != listaAnimales.Count)
+                {
+                    bool sonAnimales = false;
+                    bool sonPlantas = false;
+                    // revisa si los seres vivos que faltan asignar son animales
+                    foreach (SerVivo serVivo in listaAnimales)
+                    {
+                        if (serVivo is not PlantaCarnivora && !serVivo.Asignado)
+                        {
+                            if (!serVivo.Asignado)
                             {
-                                Console.Write($" {animal.Nombre} ({animal.Especie}) //");
-                            }
-                            else
-                            {
-                                Console.Write($" {animal.Nombre} ({animal.Especie})");
+                                sonAnimales = true;
                             }
                         }
-                        Console.WriteLine("");
                     }
-                }
-            }
-            // cuidadores sin animales asignados
-            foreach(Cuidador cuidador in listaCuidadores)
-            {
-                if(cuidador.AnimalesACargo.Count != 0)
-                {
-                    cuidadoresAsignados++;
-                }
-            }
-            if (cuidadoresAsignados != listaCuidadores.Count)
-            {
-                Console.WriteLine("Los cuidadores sin animales asignados son:");
-                foreach (Cuidador cuidador in listaCuidadores)
-                {
-                    if (cuidador.AnimalesACargo.Count == 0)
+                    // si son animales, los imprime
+                    if (sonAnimales)
                     {
-                        Console.WriteLine("{0,-15}", cuidador.Nombre);
+                        Console.WriteLine("Los animales sin asignar son:");
+                        foreach (SerVivo serVivo in listaAnimales)
+                        {
+                            if (serVivo is not PlantaCarnivora && !serVivo.Asignado)
+                            {
+                                Console.WriteLine($"{serVivo.Nombre} ({serVivo.Especie})");
+                            }
+                        }
                     }
-                }
-            }
-            // animales sin asignar
-            if (animalesAsignados != listaAnimales.Count)
-            {
-                Console.WriteLine("Los animales sin asignar son:");
-                foreach (Animal animal in listaAnimales)
-                {
-                    if (animal.Asignado == false)
+                    // revisa si los seres vivos que faltan asignar son plantas carnívoras
+                    foreach (SerVivo serVivo in listaAnimales)
                     {
-                        Console.WriteLine($"{animal.Nombre} ({animal.Especie})");
+                        if (serVivo is PlantaCarnivora && !serVivo.Asignado)
+                        {
+                            if (!serVivo.Asignado)
+                            {
+                                sonPlantas = true;
+                            }
+                        }
+                    }
+                    // si son plantas, las imprime
+                    if (sonPlantas)
+                    {
+                        Console.WriteLine("Las plantas carnívoras sin asignar son:");
+                        foreach (SerVivo serVivo in listaAnimales)
+                        {
+                            if (serVivo is PlantaCarnivora && !serVivo.Asignado)
+                            {
+                                Console.WriteLine($"{serVivo.Nombre} ({serVivo.Especie})");
+                            }
+                        }
                     }
                 }
             }
         }
+
+        public void alimentarAnimales()
+        {
+            bool existeC = false;
+            bool existeA = false;
+            foreach (Cuidador cuidador in listaCuidadores)
+            {
+                existeC = true;
+                if (cuidador.AnimalesACargo.Count == 0)
+                {
+                    Console.WriteLine($"{cuidador.Nombre} no tiene animales a cargo para alimentar");
+                }
+                else
+                {
+                    Console.WriteLine($"{cuidador.Nombre} alimenta a sus animales:");
+                }
+                foreach (SerVivo animal in cuidador.AnimalesACargo)
+                {
+                    Console.Write("    ");
+                    animal.comer();
+                    existeA = true;
+                }
+            }
+            if (existeC == false)
+            {
+                Console.WriteLine("No hay ningún cuidador");
+            }
+        }
     }
 
-    class Animal : IAnimal
+    class SerVivo : IAnimal
     {
         public string Nombre { get; }
-        public string Especie { get; }
+        public string Especie { get; set; }
         public string Comida { get; set; }
         public bool Asignado { get; set; }
+        public bool Alimentado { get; set; }
 
-        public Animal(string nombre, string especie, string comida)
+        public SerVivo(string nombre, string especie, string comida)
         {
             this.Nombre = nombre;
             this.Especie = especie;
             this.Comida = comida;
             this.Asignado = false;
+            this.Alimentado = false;
         }
 
-        public Animal(string nombre)
+        public SerVivo(string nombre)
         {
             this.Nombre = nombre;
         }
@@ -310,9 +405,17 @@ namespace ZOO
             return $"Nombre: {Nombre}, Especie: {Especie}, Comida: {Comida}";
         }
 
-        public void comer()
+        public virtual void comer()
         {
-            Console.WriteLine("El " + Nombre + " comió " + Comida);
+            if (Alimentado == false)
+            {
+                Console.WriteLine($"{Nombre} el {Especie} comió {Comida}");
+                Alimentado = true;
+            }
+            else
+            {
+                Console.WriteLine($"{Nombre} el {Especie} ya comió");
+            }
         }
 
         public void mostarDatos()
@@ -321,7 +424,7 @@ namespace ZOO
         }
     }
 
-    class Mamifero : Animal
+    class Mamifero : SerVivo
     {
         public Mamifero(string nombre, string especie, string comida) : base(nombre, especie, comida)
         {
@@ -333,7 +436,7 @@ namespace ZOO
         }
     }
 
-    class Ave : Animal
+    class Ave : SerVivo
     {
         public Ave(string nombre, string especie, string comida) : base(nombre, especie, comida)
         {
@@ -345,7 +448,7 @@ namespace ZOO
         }
     }
 
-    class Pez : Animal
+    class Pez : SerVivo
     {
         public Pez(string nombre, string especie, string comida) : base(nombre, especie, comida)
         {
@@ -357,36 +460,43 @@ namespace ZOO
         }
     }
 
-    class PlantaCarnivora : IAnimal
+    class PlantaCarnivora : SerVivo, IAnimal
     {
-        public string Nombre { get; }
         public string Tipo { get; }
         public string TipoCarnivoro { get; }
 
-        public PlantaCarnivora(string nombre, string tipo, string tipoCarnivoro)
+        public PlantaCarnivora(string nombre, string tipo, string tipoCarnivoro) : base(nombre)
         {
-            this.Nombre = nombre;
+            this.Especie = "Planta Carnívora";
             this.Tipo = tipo;
             this.TipoCarnivoro = tipoCarnivoro;
         }
 
-        public void comer()
+        public override void comer()
         {
             Random rnd = new Random();
-            switch (rnd.Next(1, 5))
+            if (!this.Alimentado)
             {
-                case 1:
-                    Console.WriteLine("El " + this.Nombre + " comió una mosca ");
-                    break;
-                case 2:
-                    Console.WriteLine("El " + this.Nombre + " comió una hormiga ");
-                    break;
-                case 3:
-                    Console.WriteLine("El " + this.Nombre + " comió una araña ");
-                    break;
-                case 4:
-                    Console.WriteLine("El " + this.Nombre + " comió una hormiga ");
-                    break;
+                switch (rnd.Next(1, 5))
+                {
+                    case 1:
+                        Console.WriteLine($"{this.Nombre} la planta carnívora comió una mosca ");
+                        break;
+                    case 2:
+                        Console.WriteLine($"{this.Nombre} la planta carnívora comió una hormiga ");
+                        break;
+                    case 3:
+                        Console.WriteLine($"{this.Nombre} la planta carnívora comió una araña ");
+                        break;
+                    case 4:
+                        Console.WriteLine($"{this.Nombre} la planta carnívora comió una hormiga ");
+                        break;
+                }
+                Alimentado = true;
+            }
+            else
+            {
+                Console.WriteLine($"{this.Nombre} la planta carnívora ya comió");
             }
         }
     }
@@ -402,14 +512,14 @@ namespace ZOO
             this.AnimalesACargo = new List<IAnimal>();
         }
 
-        public void agregarAnimalACargo(Animal animal)
+        public void agregarAnimalACargo(SerVivo animal)
         {
             AnimalesACargo.Add(animal);
         }
 
         public void alimentar(List<IAnimal> animales)
         {
-            foreach (Animal animal in animales)
+            foreach (SerVivo animal in animales)
             {
                 animal.comer();
             }
